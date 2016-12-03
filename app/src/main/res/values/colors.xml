@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimary">#000000</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="white">#FFFF</color>
     <color name="teal">#00deff</color>
     <color name="badablue">#0fa8bf</color>
+    <color name="menured">#d24545</color>
+    <color name="menublue">#31b4ae</color>
+    <color name="menugreen">#46ec9a</color>
+    <color name="menuyellow">#f0be36</color>
+    <color name="menupurple">#b400ff</color>
+    <color name="test">#eaeaea</color>
 </resources>

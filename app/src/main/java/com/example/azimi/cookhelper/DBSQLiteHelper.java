@@ -24,7 +24,7 @@ public class DBSQLiteHelper extends SQLiteOpenHelper{
     public static final String KEY_CUISINETYPE = "cuisineType";
     public static final String KEY_MEALTYPE = "mealType";
     public static final String KEY_INGREDIENTS = "ingredients";
-    public static final String KEY_INSTRUCTIONS = "directions";
+    public static final String KEY_INSTRUCTIONS = "instructions";
 
 
 
@@ -59,7 +59,7 @@ public class DBSQLiteHelper extends SQLiteOpenHelper{
         // make values to be inserted
         ContentValues values = new ContentValues();
         values.put(KEY_NAME, recipe.getName());
-        values.put(KEY_CUISINETYPE, recipe.getCusine());
+        values.put(KEY_CUISINETYPE, recipe.getCuisine());
         values.put(KEY_MEALTYPE, recipe.getType());
         values.put(KEY_INGREDIENTS, recipe.getIngr());
         values.put(KEY_INSTRUCTIONS, recipe.getInstructions());

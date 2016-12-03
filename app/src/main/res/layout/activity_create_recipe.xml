@@ -8,222 +8,288 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.azimi.cookhelper.CreateRecipe"
-    android:background ="@color/badablue">
+    android:background ="@drawable/genericbg">
+
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/linearLayout2"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/linearLayout2">
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Add a Recipe"
+            android:text="ADD RECIPE"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:textColor="@color/menupurple"
             android:id="@+id/textView"
             android:layout_gravity="center_horizontal" />
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="280dp"
+        android:orientation="horizontal"
         android:layout_below="@+id/linearLayout2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:id="@+id/linearLayout4" >
+        android:id="@+id/linearLayout5">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="107dp"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Choose Ingredients:"
-            android:id="@+id/textView3"
+            android:text="Recipe Name :"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/textView9" />
+
+        <EditText
+            android:id="@+id/btn_recipename"
+            android:inputType="text"
+            android:hint="Enter the name of your recipe"
+            android:textSize="35px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/linearLayout2"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:layout_weight="1" />
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView3" >
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ingredient 1"
-                android:id="@+id/checkBox4"
-                android:layout_below="@+id/textView3"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ingredient 2"
-                android:id="@+id/checkBox5"
-                android:layout_below="@+id/checkBox4"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ingredient 3"
-                android:id="@+id/checkBox6"
-                android:layout_below="@+id/checkBox5"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout3"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Enter Steps:"
-            android:id="@+id/textView2"
-            android:layout_below="@+id/linearLayout2"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="1."
-                android:id="@+id/textView6" />
-
-            <EditText
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/editText3" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView2">
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="2."
-                    android:id="@+id/textView4" />
-
-                <EditText
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/editText" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="3."
-                android:id="@+id/textView5" />
-
-            <EditText
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/editText2" />
-        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:id="@+id/linearLayout4">
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@android:color/background_light"
-            android:textColor="@android:color/holo_blue_bright"
-            android:text="Cancel"
-            android:id="@+id/button"
-            android:layout_weight="1.08" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/background_light"
-            android:textColor="@android:color/holo_blue_bright"
+            android:textColor="@color/menupurple"
             android:text="Add Recipe"
             android:id="@+id/button2"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:onClick="onClick_addRecipeClicked" />
     </LinearLayout>
 
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/spinner2"
-        android:layout_weight="1"
-        android:layout_alignBottom="@+id/linearLayout5"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
     <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout5"
-        android:layout_below="@+id/linearLayout3"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50px"
+        android:layout_marginTop="66dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:text="Cuisine:"
+            android:layout_width="10px"
+            android:textSize="15sp"
+            android:textStyle="bold"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Select Category and Type:"
-            android:id="@+id/textView7" />
+            android:id="@+id/textView15"
+            android:layout_weight="1" />
+
+        <Spinner
+            android:layout_width="5px"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinnercuisine"
+            android:layout_weight="1.60" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50px"
+        android:layout_marginTop="99dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/linearLayout">
+
+        <TextView
+            android:text="Category:"
+            android:layout_width="10px"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_height="match_parent"
+            android:id="@+id/textView16"
+            android:layout_weight="1.00" />
+
+        <Spinner
+            android:layout_width="5px"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinnercategory"
+            android:layout_weight="1.59" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="350px"
+        android:layout_marginTop="35dp"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:weightSum="1"
+        android:id="@+id/linearLayout3"
+        android:layout_alignBottom="@+id/linearLayout5">
+
+        <TextView
+            android:text="Create Ingredient:"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView17"
+            android:layout_alignTop="@+id/linearLayout11"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <Spinner
-                android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="107dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/spinner"
-                android:spinnerMode="dropdown" />
+                android:text="Name:"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:id="@+id/textView20" />
+
+            <EditText
+                android:id="@+id/btn_ingredientname"
+                android:inputType="text"
+                android:hint="Enter the name of your ingredient"
+                android:textSize="35px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearLayout2"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="107dp"
+                android:layout_height="wrap_content"
+                android:text="Unit:"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:id="@+id/textView21" />
+
+            <Spinner
+                android:layout_width="5px"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinnerunit"
+                android:layout_weight="1.60" />
+
 
         </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="710px"
+            android:layout_below="@+id/linearLayout3"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="42dp"
+            android:layout_marginEnd="42dp"
+            android:layout_height="50dp">
+
+            <TextView
+                android:layout_width="107dp"
+                android:layout_height="wrap_content"
+                android:text="Amount:"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:id="@+id/textView22" />
+
+            <EditText
+                android:id="@+id/btn_amountname"
+                android:inputType="text|number"
+                android:hint="Enter the amount"
+                android:textSize="35px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearLayout2"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+        </LinearLayout>
+
     </LinearLayout>
+
+    <Button
+        android:text="Add Ingredient"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:id="@+id/button4"
+        android:textColor="@color/menupurple"
+        android:visibility="visible"
+        android:layout_below="@+id/linearLayout5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="onClick_addIngredientClicked" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/button4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/linearLayout4">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="Instructions:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:id="@+id/textView2"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:id="@+id/instructions" />
+    </LinearLayout>
+
 
 </RelativeLayout>

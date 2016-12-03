@@ -9,25 +9,25 @@ import java.util.LinkedList;
 public class Recipe {
 
     private String name;
-    private String cusine;
+    private String cuisine;
     private String type;
     private String instructions;
     private String ingr;
 
 
 
-    public Recipe(String name, String cusine, String type, LinkedList<Ingredient> ingredients, String instructions) {
+    public Recipe(String name, String cuisine, String type, LinkedList<Ingredient> ingredients, String instructions) {
         this.name = name;
-        this.cusine=cusine;
+        this.cuisine=cuisine;
         this.type =type;
-        this.instructions = this.instructions;
+        this.instructions = instructions;
         for(int i=0; i<ingredients.size();i++){
             ingr=ingr + (","+ingredients.get(i).getName()+","+ingredients.get(i).getQuantity()+","+ingredients.get(i).getUnit());
         }
     }
-    public Recipe(String name, String cusine, String type, String instructions, String ingredients) {
+    public Recipe(String name, String cuisine, String type, String ingredients, String instructions) {
         this.name = name;
-        this.cusine=cusine;
+        this.cuisine=cuisine;
         this.type =type;
         this.instructions = instructions;
         this.ingr=ingredients;
@@ -49,12 +49,12 @@ public class Recipe {
         this.type = type;
     }
 
-    public String getCusine() {
-        return cusine;
+    public String getCuisine() {
+        return cuisine;
     }
 
-    public void setCusine(String cusine) {
-        this.cusine = cusine;
+    public void setCuisine(String cuisine) {
+        this.cuisine = cuisine;
     }
 
     public String getIngr() {

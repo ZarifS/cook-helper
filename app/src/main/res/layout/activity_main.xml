@@ -15,62 +15,57 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="162dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="291dp">
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:weightSum="1">
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="70dp">
+            android:layout_height="150px"
+            android:layout_weight="0.01">
+
 
             <Button
-                android:text="Create Recipe"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/button15"
-                android:fontFamily="cursive"
-                android:textSize="24sp"
-                android:textColor="@android:color/holo_blue_bright"
-                android:background="@android:color/background_light"
-                android:textStyle="normal|bold"
-                android:onClick="createBtnClick" />
+                android:text="Add Recipe"
+                android:layout_width="110dp"
+                android:layout_gravity="center"
+                android:textColor="@color/menupurple"
+                android:layout_height="60dp"
+                android:id="@+id/button9"
+                android:onClick="addBtnClick" />
         </LinearLayout>
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="70dp">
+            android:layout_height="150px">
 
             <Button
-                android:text="Browse Recipe"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/button16"
-                android:background="@android:color/background_light"
-                android:textColor="@android:color/holo_blue_bright"
-                android:fontFamily="cursive"
-                android:textSize="24sp"
-                android:textStyle="normal|bold"
+                android:text="Browse Recipes"
+                android:layout_width="110dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:textColor="@color/menupurple"
+                android:id="@+id/button8"
                 android:onClick="browseBtnClick" />
         </LinearLayout>
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="150px">
 
             <Button
-                android:text="Help"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/button18"
-                android:background="@android:color/background_light"
-                android:textColor="@android:color/holo_blue_bright"
-                android:fontFamily="cursive"
-                android:textSize="24sp"
-                android:textStyle="normal|bold" />
+                android:text="About"
+                android:layout_width="110dp"
+                android:textColor="@color/menupurple"
+                android:layout_gravity="center"
+                android:layout_height="60dp"
+                android:id="@+id/button10"
+                android:onClick="aboutBtnClick" />
         </LinearLayout>
     </LinearLayout>
-
 </RelativeLayout>

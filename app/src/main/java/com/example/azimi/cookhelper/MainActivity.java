@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().hide();
     }
 
     public void browseBtnClick(View view) {
@@ -22,9 +23,15 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void createBtnClick(View view){
+    public void addBtnClick(View view){
 
         Intent intent = new Intent(this, CreateRecipe.class);
+        startActivity(intent);
+    }
+
+    public void aboutBtnClick(View view){
+
+        Intent intent = new Intent(this, About.class);
         startActivity(intent);
     }
 }
