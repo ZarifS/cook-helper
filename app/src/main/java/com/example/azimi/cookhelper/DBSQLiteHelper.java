@@ -20,7 +20,6 @@ public class DBSQLiteHelper extends SQLiteOpenHelper{
     //db fields
     public static final String TABLE_NAME = "RecipesDB";
     public static final String KEY_NAME = "name";
-//    public static final String KEY_CLASSTYPE = "classType";
     public static final String KEY_CUISINETYPE = "cuisineType";
     public static final String KEY_MEALTYPE = "mealType";
     public static final String KEY_INGREDIENTS = "ingredients";
@@ -82,14 +81,14 @@ public class DBSQLiteHelper extends SQLiteOpenHelper{
         Cursor cursor = db.rawQuery(query, null);
 
         // parse all results
-        Recipe recipe = null;
+        Recipe recipe;
         if (cursor.moveToFirst()) {
             do {
-                String name = cursor.getString(0);
-                String cuisine = cursor.getString(1);
-                String type = cursor.getString(2);
-                String ingr = cursor.getString(3);
-                String instructions = cursor.getString(4);
+                String name = cursor.getString(1);
+                String cuisine = cursor.getString(2);
+                String type = cursor.getString(3);
+                String ingr = cursor.getString(4);
+                String instructions = cursor.getString(5);
                 recipe = new Recipe(name,cuisine,type,ingr,instructions);
                 // Add book to books
                 recipes.add(recipe);
@@ -97,4 +96,5 @@ public class DBSQLiteHelper extends SQLiteOpenHelper{
         }
         return recipes;
     }
+
 }

@@ -8,22 +8,37 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import java.util.LinkedList;
+import java.util.List;
 
 import static java.lang.Math.E;
 
 public class CreateRecipe extends AppCompatActivity {
 
 
-    public DBSQLiteHelper dbsq = new DBSQLiteHelper(this);
+    public DBSQLiteHelper db = new DBSQLiteHelper(this);
 
 
-    public LinkedList<Ingredient> listofIngredients;
+    private LinkedList<Ingredient> listofIngredients;
+    private List<Recipe> allRecipes;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_recipe);
         getSupportActionBar().hide();
+        allRecipes=db.getAllRecipes();
+        System.out.println("The first two test cases were messed up (Both TestRecipe). The correct test case is Pasta");
+        for(int i=0;i<allRecipes.size();i++){
+            Recipe r;
+            r=allRecipes.get(i);
+            System.out.println(r.getName());
+            System.out.println(r.getCuisine());
+            System.out.println(r.getType());
+            System.out.println(r.getIngr());
+            System.out.println(r.getInstructions());
+        }
+
 
         listofIngredients = new LinkedList<>();
 
@@ -69,11 +84,13 @@ public class CreateRecipe extends AppCompatActivity {
         String instructionsString = instructions.getText().toString();
 
         Recipe recipe = new Recipe(nameString,cuisineTypeString,categoryTypeString, listofIngredients, instructionsString);//Create a new recipe
-
-
-
-
-
+        Recipe r;
+        db.createRecipe(recipe);
+//        allRecipes=db.getAllRecipes();
+//        for(int i=0;i<allRecipes.size();i++){
+//            r=allRecipes.get(i);
+//            System.out.println(r.getName());
+//        }
 
     }
 

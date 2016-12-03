@@ -12,7 +12,7 @@ public class Recipe {
     private String cuisine;
     private String type;
     private String instructions;
-    private String ingr;
+    private String ingr="";
 
 
 
@@ -22,7 +22,7 @@ public class Recipe {
         this.type =type;
         this.instructions = instructions;
         for(int i=0; i<ingredients.size();i++){
-            ingr=ingr + (","+ingredients.get(i).getName()+","+ingredients.get(i).getQuantity()+","+ingredients.get(i).getUnit());
+            ingr=ingr + (ingredients.get(i).getName()+","+ingredients.get(i).getQuantity()+","+ingredients.get(i).getUnit()+",");
         }
     }
     public Recipe(String name, String cuisine, String type, String ingredients, String instructions) {
