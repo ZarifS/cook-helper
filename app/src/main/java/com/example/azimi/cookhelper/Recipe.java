@@ -8,28 +8,68 @@ import java.util.LinkedList;
 
 public class Recipe {
 
-    String name;
-    String cusine;
-    String type;
-    String directions;
-    String ingredients;
+    private String name;
+    private String cusine;
+    private String type;
+    private String instructions;
+    private String ingr;
 
 
 
-    public Recipe(String name, String cusine, String type, String directions, LinkedList<Ingredients> ingredients) {
+    public Recipe(String name, String cusine, String type, LinkedList<Ingredient> ingredients, String instructions) {
         this.name = name;
         this.cusine=cusine;
         this.type =type;
-        this.directions=directions;
-        LinkedList<Ingredient> temp = ingredients;
+        this.instructions = this.instructions;
         for(int i=0; i<ingredients.size();i++){
-            this.ingredients=ingredients +(","+)
+            ingr=ingr + (","+ingredients.get(i).getName()+","+ingredients.get(i).getQuantity()+","+ingredients.get(i).getUnit());
         }
-
-
+    }
+    public Recipe(String name, String cusine, String type, String instructions, String ingredients) {
+        this.name = name;
+        this.cusine=cusine;
+        this.type =type;
+        this.instructions = instructions;
+        this.ingr=ingredients;
     }
 
-    //getters
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getCusine() {
+        return cusine;
+    }
+
+    public void setCusine(String cusine) {
+        this.cusine = cusine;
+    }
+
+    public String getIngr() {
+        return ingr;
+    }
+
+    public void setIngr(String ingr) {
+        this.ingr = ingr;
+    }
+
+    public String getInstructions() {
+        return instructions;
+    }
+
+    public void setInstructions(String instructions) {
+        this.instructions = instructions;
+    }
 }
