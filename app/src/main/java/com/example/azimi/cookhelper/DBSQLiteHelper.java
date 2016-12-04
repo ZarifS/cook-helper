@@ -97,4 +97,10 @@ public class DBSQLiteHelper extends SQLiteOpenHelper{
         return recipes;
     }
 
+    public void deleteRecipe(int id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String s = "DELETE FROM RecipesDB WHERE id ="+id+"";
+        db.execSQL(s);
+    }
+
 }
