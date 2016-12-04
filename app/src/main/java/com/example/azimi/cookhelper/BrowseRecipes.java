@@ -53,6 +53,8 @@ public class BrowseRecipes extends AppCompatActivity {
                                     long id) {
 
                 Intent i= new Intent(BrowseRecipes.this,ViewRecipe.class);
+
+                i.putExtra("Recipe", allRecipes.get(position));
                 startActivity(i);
                 finish();
 
