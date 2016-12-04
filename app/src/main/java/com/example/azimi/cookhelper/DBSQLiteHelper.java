@@ -103,4 +103,11 @@ public class DBSQLiteHelper extends SQLiteOpenHelper{
         db.execSQL(s);
     }
 
+    public void clear(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String s= ("DELETE * FROM "+ TABLE_NAME);
+        db.execSQL(s);
+    }
+
+
 }

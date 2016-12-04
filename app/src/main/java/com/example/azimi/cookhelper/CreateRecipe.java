@@ -81,7 +81,6 @@ public class CreateRecipe extends AppCompatActivity {
         String instructionsString = instructions.getText().toString();
 
         Recipe recipe = new Recipe(nameString,cuisineTypeString,categoryTypeString, listofIngredients, instructionsString);//Create a new recipe
-        Recipe r;
         db.createRecipe(recipe);
 //        allRecipes=db.getAllRecipes();
 //        for(int i=0;i<allRecipes.size();i++){

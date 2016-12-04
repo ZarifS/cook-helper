@@ -11,6 +11,20 @@
     tools:context="com.example.azimi.cookhelper.BrowseRecipes"
     android:background ="@drawable/genericbg">
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:queryHint="Search Recipes"
+            android:id="@+id/searchView1" />
+    </LinearLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,15 +32,14 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
-        <SearchView
+        <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Search Recipes"
-            android:textSize="20px"
-            android:layout_alignParentBottom="true"
+            android:layout_marginTop="66dp"
+            android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginBottom="515dp" />
+            android:id="@+id/listView1" />
 
     </RelativeLayout>
 </RelativeLayout>
