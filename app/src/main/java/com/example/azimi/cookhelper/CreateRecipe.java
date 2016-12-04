@@ -39,10 +39,7 @@ public class CreateRecipe extends AppCompatActivity {
             System.out.println(r.getInstructions());
         }
 
-
         listofIngredients = new LinkedList<>();
-
-
 
         Spinner dropdownCuisine = (Spinner) findViewById(R.id.spinnercuisine);
         String[] items1 = new String[]{"American", "French", "Mexican", "Italian", "Chinese", "Arabic", "Indian", "Other"};
