@@ -54,7 +54,7 @@ public class CreateRecipe extends AppCompatActivity {
 
 
         Spinner dropdownUnit = (Spinner) findViewById(R.id.spinnerunit);
-        String[] items3 = new String[]{"cup(s)", "tbsp", "tsp", "g", "l", "mg", "ml"};
+        String[] items3 = new String[]{"cup(s)", "tbsp", "tsp", "g", "l", "mg", "ml", "-"};
         ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items3);
         dropdownUnit.setAdapter(adapter3);
 
@@ -71,10 +71,10 @@ public class CreateRecipe extends AppCompatActivity {
         EditText recipename = (EditText)findViewById(R.id.btn_recipename);
         Spinner cuisineType = (Spinner)findViewById(R.id.spinnercuisine);
         Spinner categorytype = (Spinner)findViewById(R.id.spinnercategory);
-
-
-
         EditText instructions = (EditText)findViewById(R.id.instructions);
+
+
+
         String nameString = recipename.getText().toString();
         String cuisineTypeString = cuisineType.getSelectedItem().toString();
         String categoryTypeString = categorytype.getSelectedItem().toString();
@@ -87,6 +87,10 @@ public class CreateRecipe extends AppCompatActivity {
 //            r=allRecipes.get(i);
 //            System.out.println(r.getName());
 //        }
+
+        recipename.setText("");
+        instructions.setText("");
+
 
     }
 
@@ -106,6 +110,9 @@ public class CreateRecipe extends AppCompatActivity {
         Ingredient ing = new Ingredient(ingnameString, ingamountString, ingunitString);
 
         listofIngredients.add(ing);
+
+        ingname.setText("");
+        ingamount.setText("");
 
 
     }

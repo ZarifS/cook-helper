@@ -29,7 +29,6 @@ public class BrowseRecipes extends AppCompatActivity {
         setContentView(R.layout.activity_browse_recipes);
         getSupportActionBar().hide();
 
-
         allRecipes=db.getAllRecipes();
         String names[] = new String[allRecipes.size()];
 

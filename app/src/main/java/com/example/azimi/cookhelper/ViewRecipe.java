@@ -20,7 +20,7 @@ public class ViewRecipe extends AppCompatActivity {
         String[] temp = new String[r.getIngr().length()];
         TextView recipename = (TextView) findViewById(R.id.recipeName);
         TextView mealtype=(TextView) findViewById(R.id.mealType);
-        TextView cuisinetype=(TextView) findViewById(R.id.cuisineType);
+        TextView cuisinetype=(TextView) findViewById(R.id.cuisine);
         TextView ingredient1=(TextView) findViewById(R.id.ing1);
         TextView ingredient2=(TextView) findViewById(R.id.ing2);
         TextView ingredient3=(TextView) findViewById(R.id.ing3);
@@ -41,23 +41,27 @@ public class ViewRecipe extends AppCompatActivity {
         recipename.setText(r.getName());
         mealtype.setText(r.getType());
         cuisinetype.setText(r.getCuisine());
-        String[] arr = r.getIngr().split(",");
+        String[] arr = r.getIngr().split(",");//array that stores all values in which ingr was split with comma
 
         for(int j = 0; j<arr.length; j=j+3){
-            String s = arr[j]+", "+arr[j+1]+" "+arr[j+2];
-            temp[j] = s;
-
+            String s = "  - "+arr[j]+", "+arr[j+1]+" "+arr[j+2];//goes thru array and stores indexs 0-3 into a string
+            temp[j] = s;//stores that string into the array temp
         }
 
         int x = 0;
 
-        for(int z = 0; z<ingredients.length; z++) {
-            ingredients[z].setText(temp[x]);
-            x=x+3;
+        for(int z = 0; z<temp.length; z++) {
+
+            if(x<temp.length) {
+                ingredients[z].setText(temp[x]);
+                if(temp[x+3] == null){
+                    break;
+                }
+                else {
+                    x = x + 3;
+                }
+            }
         }
-
         instructions.setText(r.getInstructions());
-        
-
     }
 }
