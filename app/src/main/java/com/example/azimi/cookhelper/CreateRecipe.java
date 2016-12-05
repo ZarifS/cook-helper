@@ -28,6 +28,7 @@ public class CreateRecipe extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_recipe);
         getSupportActionBar().hide();
+<<<<<<< HEAD
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         allRecipes=db.getAllRecipes();
@@ -42,6 +43,8 @@ public class CreateRecipe extends AppCompatActivity {
             System.out.println(r.getInstructions());
         }
 
+=======
+>>>>>>> 8e0085b2803abc5a32683b4f57096b49e9e85921
         listofIngredients = new LinkedList<>();
 
         Spinner dropdownCuisine = (Spinner) findViewById(R.id.spinnercuisine);
@@ -85,11 +88,6 @@ public class CreateRecipe extends AppCompatActivity {
 
         Recipe recipe = new Recipe(nameString,cuisineTypeString,categoryTypeString, listofIngredients, instructionsString);//Create a new recipe
         db.createRecipe(recipe);
-//        allRecipes=db.getAllRecipes();
-//        for(int i=0;i<allRecipes.size();i++){
-//            r=allRecipes.get(i);
-//            System.out.println(r.getName());
-//        }
 
         recipename.setText("");
         instructions.setText("");
