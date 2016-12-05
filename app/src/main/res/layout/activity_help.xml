@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_help"
+    android:id="@+id/activity_help_page"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -10,5 +10,105 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.azimi.cookhelper.Help"
     android:background="@drawable/genericbg">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true">
+
+            <TextView
+                android:text="Cook Helper is an application cookbook that allows you to add, browse and search recipes in an organized and easy to use environment at the touch of button! "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView12" />
+
+            <TextView
+                android:text="Add Recipe"
+                android:textColor="@color/menured"
+                android:textSize="18dp"
+                android:layout_marginTop="13dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView13" />
+
+            <TextView
+                android:layout_marginTop="7dp"
+                android:text="Know a recipe not in your cookbook? Go to the 'Add Recipe' page from the main menu and fill in all the blanks (name, ingredients, cooking directions etc.) to create a new recipe!"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView18" />
+
+            <TextView
+                android:text="Browse Recipes"
+                android:textSize="18dp"
+                android:layout_marginTop="13dp"
+                android:textColor="@color/menupurple"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView23" />
+
+            <TextView
+                android:layout_marginTop="7dp"
+                android:text="To view all recipes in your cookbook, go to the 'Browse Recipes' page from the main menu. Looking for a specific recipe? You can filter through all the recipes by name!"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView24" />
+
+            <TextView
+                android:text="Search Recipes"
+                android:textSize="18dp"
+                android:layout_marginTop="13dp"
+                android:textColor="@color/menuyellow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView25" />
+
+            <TextView
+                android:layout_marginTop="7dp"
+                android:text="Not sure what you're looking for? Go to the 'Search Recipes' page from the main menu to search your cookbook and filter through by name, ingredients, cuisine (ex. Italian), or category (ex. Appetizer)!"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView26" />
+
+            <TextView
+                android:text="Edit Recipe"
+                android:textSize="18dp"
+                android:layout_marginTop="13dp"
+                android:textColor="@color/menugreen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView27" />
+
+            <TextView
+                android:layout_marginTop="7dp"
+                android:text="Improve an older recipe? Editing a recipe in your cookbook is as easy as opening up the recipe and selecting the 'Edit Recipe' option. There you can change the name, cuisine type, category and add ingredients."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView28" />
+
+            <TextView
+                android:text="Delete Recipe"
+                android:textSize="18dp"
+                android:layout_marginTop="13dp"
+                android:textColor="@color/menublue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView29" />
+
+            <TextView
+                android:layout_marginTop="7dp"
+                android:text="Don't like a recipe in your cookbook? You can delete a recipe by opening it up and then selecting the 'Delete Recipe' option. Careful, once you delete a recipe you can't recover it!"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/textView30" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>

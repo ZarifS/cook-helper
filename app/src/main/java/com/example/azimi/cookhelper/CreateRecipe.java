@@ -19,7 +19,7 @@ public class CreateRecipe extends AppCompatActivity {
     public DBSQLiteHelper db = new DBSQLiteHelper(this);
 
 
-    private LinkedList<Ingredient> listofIngredients;
+    public LinkedList<Ingredient> listofIngredients;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,10 +81,7 @@ public class CreateRecipe extends AppCompatActivity {
         Spinner ingunit = (Spinner)findViewById(R.id.spinnerunit);
         EditText ingamount = (EditText)findViewById(R.id.btn_amountname);
 
-
         String ingnameString = ingname.getText().toString();
-
-        System.out.println(ingnameString);
         String ingunitString = ingunit.getSelectedItem().toString();
         String ingamountString = ingamount.getText().toString();
 

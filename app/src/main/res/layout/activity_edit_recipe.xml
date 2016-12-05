@@ -70,23 +70,6 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:id="@+id/linearLayout4">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/menupurple"
-            android:text="Confirm Edit"
-            android:id="@+id/confirm"
-            android:layout_weight="1"
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
         android:layout_height="50px"
         android:layout_marginTop="66dp"
         android:layout_alignParentLeft="true"
@@ -257,7 +240,7 @@
         android:layout_below="@+id/linearLayout5"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:onClick="onClick_addIngredientClicked" />
+        android:onClick="addIngredientBtnClicked" />
 
     <LinearLayout
         android:orientation="vertical"
@@ -289,6 +272,35 @@
             android:inputType="textMultiLine"
             android:ems="10"
             android:id="@+id/instructions" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout4"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:text="Back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/backBtn"
+            android:textColor="@color/menupurple"
+            android:onClick="backBtnClick"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/menupurple"
+            android:text="Confirm Edit"
+            android:id="@+id/confirm"
+            android:onClick="confirmBtnClick"
+            android:layout_weight="1"
+            />
     </LinearLayout>
 
 

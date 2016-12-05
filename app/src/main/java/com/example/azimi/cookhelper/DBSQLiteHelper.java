@@ -99,6 +99,24 @@ public class DBSQLiteHelper extends SQLiteOpenHelper{
         return recipes;
     }
 
+    public void editRecipe(Recipe oldRecipe, Recipe newRecipe) {
+
+        // get reference of the recipes database
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(KEY_NAME, newRecipe.getName());
+        values.put(KEY_CUISINETYPE, newRecipe.getCuisine());
+        values.put(KEY_MEALTYPE, newRecipe.getType());
+        values.put(KEY_INGREDIENTS, newRecipe.getIngr());
+        values.put(KEY_INSTRUCTIONS, newRecipe.getInstructions());
+
+        // update
+        db.update(TABLE_NAME, values, "name = ?", new String[] { String.valueOf(oldRecipe.getName()) });
+
+        db.close();
+    }
+
     public void deleteRecipe(Recipe r){
         SQLiteDatabase db = this.getWritableDatabase();
         String s = "DELETE FROM RecipesDB WHERE name = '"+r.getName()+"'";
@@ -235,5 +253,19 @@ public class DBSQLiteHelper extends SQLiteOpenHelper{
 
     }
 
+
+    public int getID(String search){
+        int id=0;
+        SQLiteDatabase db = this.getWritableDatabase();
+        search =search.toLowerCase();
+        String query = "SELECT * FROM RecipesDB WHERE name = '"+search+"'";
+        Cursor cursor = db.rawQuery(query, null);
+        if (cursor.moveToFirst()) {
+            id=cursor.getInt(0);
+        }
+
+        db.close();
+        return id;
+    }
 
 }
