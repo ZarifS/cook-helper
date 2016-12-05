@@ -7,11 +7,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.List;
+
 
 public class ViewRecipe extends AppCompatActivity {
 
     public DBSQLiteHelper db = new DBSQLiteHelper(this);
+    private List<Recipe> allRecipes;
     Recipe r;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +23,7 @@ public class ViewRecipe extends AppCompatActivity {
         getSupportActionBar().hide();
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
+        allRecipes=db.getAllRecipes();
         Intent i = getIntent();
         r = (Recipe)i.getSerializableExtra("Recipe");
 
@@ -73,7 +78,7 @@ public class ViewRecipe extends AppCompatActivity {
     public void deleteBtnClick(View view) {
 
 
-         db.deleteRecipe(r);
+        db.deleteRecipe(r);
 
         Intent intent = new Intent(this, BrowseRecipes.class);
         startActivity(intent);
@@ -87,5 +92,14 @@ public class ViewRecipe extends AppCompatActivity {
         startActivity(intent);
         finish();
 
+    }
+
+    public void editBtnClick(View view){
+
+        Intent i= new Intent(ViewRecipe.this,EditRecipe.class);
+
+        i.putExtra("Recipe", r);
+        startActivity(i);
+        finish();
     }
 }

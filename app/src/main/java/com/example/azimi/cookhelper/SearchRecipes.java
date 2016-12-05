@@ -26,9 +26,7 @@ public class SearchRecipes extends AppCompatActivity {
     String searchtype;
     ArrayAdapter<String> adapter;
     String[] names;
-//    String[] categories;
-//    String[] cuisines;
-//    String[] ingredients;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

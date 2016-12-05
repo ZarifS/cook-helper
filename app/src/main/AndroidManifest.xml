@@ -20,7 +20,8 @@
         <activity android:name=".About" />
         <activity android:name=".ViewRecipe" />
         <activity android:name=".Help" />
-        <activity android:name=".SearchRecipes"></activity>
+        <activity android:name=".SearchRecipes" />
+        <activity android:name=".EditRecipe"></activity>
     </application>
 
 </manifest>

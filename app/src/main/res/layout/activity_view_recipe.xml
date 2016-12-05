@@ -243,6 +243,15 @@
             android:onClick="backBtnClick" />
 
         <Button
+            android:text="Edit Recipe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editBtn"
+            android:textColor="@color/menupurple"
+            android:layout_weight="0.71"
+            android:onClick="editBtnClick" />
+
+        <Button
             android:text="DELETE RECIPE"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

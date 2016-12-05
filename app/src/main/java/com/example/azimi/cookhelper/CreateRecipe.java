@@ -69,9 +69,6 @@ public class CreateRecipe extends AppCompatActivity {
 
     public void onClick_addRecipeClicked(View view){
 
-
-
-
         EditText recipename = (EditText)findViewById(R.id.btn_recipename);
         Spinner cuisineType = (Spinner)findViewById(R.id.spinnercuisine);
         Spinner categorytype = (Spinner)findViewById(R.id.spinnercategory);
