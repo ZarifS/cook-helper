@@ -1,6 +1,7 @@
 package com.example.azimi.cookhelper;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -28,6 +29,7 @@ public class BrowseRecipes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_browse_recipes);
         getSupportActionBar().hide();
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         allRecipes=db.getAllRecipes();
         String names[] = new String[allRecipes.size()];

@@ -1,5 +1,6 @@
 package com.example.azimi.cookhelper;
 
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -27,6 +28,8 @@ public class CreateRecipe extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_recipe);
         getSupportActionBar().hide();
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
         allRecipes=db.getAllRecipes();
         System.out.println("The first two test cases were messed up (Both TestRecipe). The correct test case is Pasta");
         for(int i=0;i<allRecipes.size();i++){

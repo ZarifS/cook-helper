@@ -15,7 +15,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="210dp"
+        android:layout_marginTop="150dp"
         android:weightSum="1"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
@@ -24,8 +24,7 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="150px"
-            android:layout_weight="0.01">
+            android:layout_height="wrap_content">
 
 
             <Button
@@ -33,7 +32,7 @@
                 android:layout_width="110dp"
                 android:layout_gravity="center"
                 android:textColor="@color/menupurple"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
                 android:id="@+id/button9"
                 android:onClick="addBtnClick" />
         </LinearLayout>
@@ -41,12 +40,12 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="150px">
+            android:layout_height="wrap_content">
 
             <Button
                 android:text="Browse Recipes"
                 android:layout_width="110dp"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:textColor="@color/menupurple"
                 android:id="@+id/button8"
@@ -56,16 +55,49 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="150px">
+            android:layout_height="wrap_content">
 
             <Button
-                android:text="About"
-                android:layout_width="110dp"
+                android:text="Search Recipes"
+                android:layout_width="109dp"
+                android:layout_height="wrap_content"
                 android:textColor="@color/menupurple"
                 android:layout_gravity="center"
-                android:layout_height="60dp"
+                android:id="@+id/button3"
+                android:onClick="searchBtnClick" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:text="Help"
+                android:layout_width="106dp"
+                android:textColor="@color/menupurple"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
                 android:id="@+id/button10"
-                android:onClick="aboutBtnClick" />
+                android:onClick="helpbtnClick" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="1">
+
+                <Button
+                    android:text="About"
+                    android:layout_width="108dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="@color/menupurple"
+                    android:id="@+id/aboutBtnClick"
+                    android:onClick="aboutBtnClick" />
+            </LinearLayout>
+
         </LinearLayout>
 
     </LinearLayout>

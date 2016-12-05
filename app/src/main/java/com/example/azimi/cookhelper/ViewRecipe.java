@@ -1,21 +1,26 @@
 package com.example.azimi.cookhelper;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 
 public class ViewRecipe extends AppCompatActivity {
 
+    public DBSQLiteHelper db = new DBSQLiteHelper(this);
+    Recipe r;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_recipe);
         getSupportActionBar().hide();
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         Intent i = getIntent();
-        Recipe r = (Recipe)i.getSerializableExtra("Recipe");
+        r = (Recipe)i.getSerializableExtra("Recipe");
 
         String[] temp = new String[r.getIngr().length()];
         TextView recipename = (TextView) findViewById(R.id.recipeName);
@@ -63,5 +68,21 @@ public class ViewRecipe extends AppCompatActivity {
             }
         }
         instructions.setText(r.getInstructions());
+    }
+
+    public void deleteBtnClick(View view) {
+
+        //db.deleteRecipe();
+
+        Intent intent = new Intent(this, BrowseRecipes.class);
+        startActivity(intent);
+
+    }
+
+    public void backBtnClick(View view) {
+
+        Intent intent = new Intent(this, BrowseRecipes.class);
+        startActivity(intent);
+
     }
 }
