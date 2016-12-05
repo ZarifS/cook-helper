@@ -104,15 +104,25 @@ public class DBSQLiteHelper extends SQLiteOpenHelper{
         // get reference of the recipes database
         SQLiteDatabase db = this.getWritableDatabase();
 
-        ContentValues values = new ContentValues();
-        values.put(KEY_NAME, newRecipe.getName());
-        values.put(KEY_CUISINETYPE, newRecipe.getCuisine());
-        values.put(KEY_MEALTYPE, newRecipe.getType());
-        values.put(KEY_INGREDIENTS, newRecipe.getIngr());
-        values.put(KEY_INSTRUCTIONS, newRecipe.getInstructions());
+        int id = getID(oldRecipe.getName());
+//        ContentValues values = new ContentValues();
+//        values.put(KEY_NAME, newRecipe.getName());
+//        values.put(KEY_CUISINETYPE, newRecipe.getCuisine());
+//        values.put(KEY_MEALTYPE, newRecipe.getType());
+//        values.put(KEY_INGREDIENTS, newRecipe.getIngr());
+//        values.put(KEY_INSTRUCTIONS, newRecipe.getInstructions());
 
+        String s = "UPDATE RecipesDB SET " +KEY_NAME + " = '" +newRecipe.getName() + "' ," +
+                " " +KEY_CUISINETYPE + " = '" +newRecipe.getCuisine() + "' ," +
+                " " +KEY_MEALTYPE + " = '" +newRecipe.getType() + "' ," +
+                " " +KEY_INGREDIENTS + " = '" +newRecipe.getIngr() + "' ," +
+                " " +KEY_INSTRUCTIONS + " = '" +newRecipe.getInstructions() +
+                "' WHERE id = " +id;
+        System.out.println(s);
+       db.execSQL(s);
+        System.out.println("After query");
         // update
-        db.update(TABLE_NAME, values, "name = ?", new String[] { String.valueOf(oldRecipe.getName()) });
+//        db.update(TABLE_NAME, values, "name = ?", new String[] { String.valueOf(oldRecipe.getName()) });
 
         db.close();
     }

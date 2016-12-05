@@ -10,8 +10,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.azimi.cookhelper.ViewRecipe"
     android:background="@drawable/genericbg">
-
-
     <TextView
         android:text="RECIPE NAME"
         android:layout_width="wrap_content"
@@ -21,7 +19,6 @@
         android:id="@+id/recipeName"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
-
     <TextView
         android:text="Ingredients:"
         android:layout_width="wrap_content"
@@ -32,19 +29,16 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="33dp" />
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="160dp"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
         android:id="@+id/scrollView2">
-
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
             <TextView
                 android:text=""
                 android:layout_width="match_parent"
@@ -55,7 +49,6 @@
                 android:layout_below="@+id/textView14"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true" />
-
             <TextView
                 android:text=""
                 android:layout_width="match_parent"
@@ -63,7 +56,6 @@
                 android:textColor="@color/menuyellow"
                 android:textSize="15dp"
                 android:id="@+id/ing2" />
-
             <TextView
                 android:text=""
                 android:layout_width="match_parent"
@@ -71,7 +63,6 @@
                 android:textColor="@color/menuyellow"
                 android:textSize="15dp"
                 android:id="@+id/ing3" />
-
             <TextView
                 android:text=""
                 android:layout_width="match_parent"
@@ -79,7 +70,6 @@
                 android:textColor="@color/menuyellow"
                 android:textSize="15dp"
                 android:id="@+id/ing4" />
-
             <TextView
                 android:text=""
                 android:layout_width="match_parent"
@@ -87,7 +77,6 @@
                 android:textColor="@color/menuyellow"
                 android:textSize="15dp"
                 android:id="@+id/ing5" />
-
             <TextView
                 android:text=""
                 android:layout_width="match_parent"
@@ -95,7 +84,6 @@
                 android:textColor="@color/menuyellow"
                 android:textSize="15dp"
                 android:id="@+id/ing6" />
-
             <TextView
                 android:text=""
                 android:layout_width="match_parent"
@@ -103,7 +91,6 @@
                 android:textColor="@color/menuyellow"
                 android:textSize="15dp"
                 android:id="@+id/ing7" />
-
             <TextView
                 android:text=""
                 android:layout_width="match_parent"
@@ -111,58 +98,78 @@
                 android:textColor="@color/menuyellow"
                 android:textSize="15dp"
                 android:id="@+id/ing8" />
-
             <TextView
                 android:text=""
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/menuyellow"
                 android:id="@+id/ing9" />
-
             <TextView
                 android:text=""
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/menuyellow"
                 android:id="@+id/ing10" />
-        </LinearLayout>
-    </ScrollView>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="300dp"
-        android:id="@+id/linearLayout6">
-
-    </LinearLayout>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="350dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginBottom="50dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
             <TextView
-                android:text="Insert Instructions here"
+                android:text=""
                 android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:textColor="@color/menublue"
-                android:textSize="15dp"
-                android:maxLines="10"
-                android:lines="10"
-                android:id="@+id/instructions" />
+                android:layout_height="wrap_content"
+                android:textColor="@color/menuyellow"
+                android:id="@+id/ing11" />
+            <TextView
+                android:text=""
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/menuyellow"
+                android:id="@+id/ing12" />
+            <TextView
+                android:text=""
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/menuyellow"
+                android:id="@+id/ing13" />
+            <TextView
+                android:text=""
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/menuyellow"
+                android:id="@+id/ing14" />
+            <TextView
+                android:text=""
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/menuyellow"
+                android:id="@+id/ing15" />
+            <TextView
+                android:text=""
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/menuyellow"
+                android:id="@+id/ing16" />
+            <TextView
+                android:text=""
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/menuyellow"
+                android:id="@+id/ing17" />
+            <TextView
+                android:text=""
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/menuyellow"
+                android:id="@+id/ing18" />
+            <TextView
+                android:text=""
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/menuyellow"
+                android:id="@+id/ing19" />
+            <TextView
+                android:text=""
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
+                android:id="@+id/ing20" />
         </LinearLayout>
     </ScrollView>
 
@@ -175,7 +182,6 @@
         android:layout_below="@+id/linearLayout6"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
-
     <TextView
         android:text="Category:"
         android:layout_width="wrap_content"
@@ -184,7 +190,6 @@
         android:textSize="20dp"
         android:layout_alignBottom="@+id/cuisineType"
         android:layout_marginBottom="11dp" />
-
     <TextView
         android:text="TextView"
         android:layout_width="wrap_content"
@@ -195,7 +200,6 @@
         android:layout_alignBottom="@+id/textView14"
         android:layout_toRightOf="@+id/textView14"
         android:layout_toEndOf="@+id/textView14" />
-
     <TextView
         android:text="Cuisine:"
         android:layout_width="wrap_content"
@@ -203,7 +207,6 @@
         android:id="@+id/textView19"
         android:textSize="20dp"
         android:layout_below="@+id/cuisineType"/>
-
     <TextView
         android:text=""
         android:layout_width="wrap_content"
@@ -213,7 +216,6 @@
         android:layout_below="@+id/recipeName"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
-
     <TextView
         android:text="TextView"
         android:layout_width="wrap_content"
@@ -224,7 +226,6 @@
         android:textColor="@color/menugreen"
         android:textSize="18dp"
         android:id="@+id/cuisine" />
-
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -232,7 +233,6 @@
         android:layout_marginTop="440dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
-
         <Button
             android:text="BACK"
             android:layout_width="115dp"
@@ -241,18 +241,16 @@
             android:layout_weight="0.71"
             android:textColor="@color/menupurple"
             android:onClick="backBtnClick" />
-
         <Button
-            android:text="Edit Recipe"
+            android:text="EDIT "
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/editBtn"
             android:textColor="@color/menupurple"
             android:layout_weight="0.71"
             android:onClick="editBtnClick" />
-
         <Button
-            android:text="DELETE RECIPE"
+            android:text="DELETE"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/button14"
@@ -260,5 +258,35 @@
             android:textColor="@color/menupurple"
             android:onClick="deleteBtnClick" />
     </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textView29"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:text="Insert Instructions here"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:textColor="@color/menublue"
+                android:textSize="15dp"
+                android:maxLines="50"
+                android:lines="15"
+                android:id="@+id/instructions" />
+        </LinearLayout>
+    </ScrollView>
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:id="@+id/linearLayout6"
+        android:layout_below="@+id/scrollView2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+    </LinearLayout>
 </RelativeLayout>

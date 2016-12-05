@@ -1,32 +1,24 @@
 package com.example.azimi.cookhelper;
-
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-
 import java.util.List;
-
-
 public class ViewRecipe extends AppCompatActivity {
-
     public DBSQLiteHelper db = new DBSQLiteHelper(this);
     private List<Recipe> allRecipes;
     Recipe r;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_recipe);
         getSupportActionBar().hide();
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
         allRecipes=db.getAllRecipes();
         Intent i = getIntent();
         r = (Recipe)i.getSerializableExtra("Recipe");
-
         String[] temp = new String[r.getIngr().length()];
         TextView recipename = (TextView) findViewById(R.id.recipeName);
         TextView mealtype=(TextView) findViewById(R.id.mealType);
@@ -41,27 +33,30 @@ public class ViewRecipe extends AppCompatActivity {
         TextView ingredient8=(TextView) findViewById(R.id.ing8);
         TextView ingredient9=(TextView) findViewById(R.id.ing9);
         TextView ingredient10=(TextView) findViewById(R.id.ing10);
-
+        TextView ingredient11=(TextView) findViewById(R.id.ing11);
+        TextView ingredient12=(TextView) findViewById(R.id.ing12);
+        TextView ingredient13=(TextView) findViewById(R.id.ing13);
+        TextView ingredient14=(TextView) findViewById(R.id.ing14);
+        TextView ingredient15=(TextView) findViewById(R.id.ing15);
+        TextView ingredient16=(TextView) findViewById(R.id.ing16);
+        TextView ingredient17=(TextView) findViewById(R.id.ing17);
+        TextView ingredient18=(TextView) findViewById(R.id.ing18);
+        TextView ingredient19=(TextView) findViewById(R.id.ing19);
+        TextView ingredient20=(TextView) findViewById(R.id.ing20);
         TextView[] ingredients = {ingredient1, ingredient2, ingredient3, ingredient4, ingredient5,
-                ingredient6, ingredient7, ingredient8, ingredient9, ingredient10};
-
-
+                ingredient6, ingredient7, ingredient8, ingredient9, ingredient10, ingredient11,ingredient12,
+                ingredient13, ingredient14, ingredient15, ingredient16, ingredient17, ingredient18, ingredient19, ingredient20};
         TextView instructions=(TextView) findViewById(R.id.instructions);
-
         recipename.setText(r.getName());
         mealtype.setText(r.getType());
         cuisinetype.setText(r.getCuisine());
         String[] arr = r.getIngr().split(",");//array that stores all values in which ingr was split with comma
-
         for(int j = 0; j<arr.length; j=j+3){
             String s = "  - "+arr[j]+", "+arr[j+1]+" "+arr[j+2];//goes thru array and stores indexs 0-3 into a string
             temp[j] = s;//stores that string into the array temp
         }
-
         int x = 0;
-
         for(int z = 0; z<temp.length; z++) {
-
             if(x<temp.length) {
                 ingredients[z].setText(temp[x]);
                 if(temp[x+3] == null){
@@ -74,30 +69,19 @@ public class ViewRecipe extends AppCompatActivity {
         }
         instructions.setText(r.getInstructions());
     }
-
     public void deleteBtnClick(View view) {
-
-
         db.deleteRecipe(r);
-
         Intent intent = new Intent(this, BrowseRecipes.class);
         startActivity(intent);
         finish();
-
     }
-
     public void backBtnClick(View view) {
-
         Intent intent = new Intent(this, BrowseRecipes.class);
         startActivity(intent);
         finish();
-
     }
-
     public void editBtnClick(View view){
-
         Intent i= new Intent(ViewRecipe.this,EditRecipe.class);
-
         i.putExtra("Recipe", r);
         startActivity(i);
         finish();
