@@ -1,12 +1,13 @@
 package com.example.azimi.cookhelper;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 
 /**
  * Created by Zarif on 2016-12-02.
  */
 
-public class Recipe {
+public class Recipe implements Serializable{
 
     private String name;
     private String cuisine;

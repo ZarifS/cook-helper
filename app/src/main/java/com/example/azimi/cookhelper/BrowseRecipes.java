@@ -29,7 +29,6 @@ public class BrowseRecipes extends AppCompatActivity {
         setContentView(R.layout.activity_browse_recipes);
         getSupportActionBar().hide();
 
-
         allRecipes=db.getAllRecipes();
         String names[] = new String[allRecipes.size()];
 
@@ -53,6 +52,8 @@ public class BrowseRecipes extends AppCompatActivity {
                                     long id) {
 
                 Intent i= new Intent(BrowseRecipes.this,ViewRecipe.class);
+
+                i.putExtra("Recipe", allRecipes.get(position));
                 startActivity(i);
                 finish();
 
