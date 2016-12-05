@@ -17,7 +17,6 @@ import java.util.List;
 public class SearchRecipes extends AppCompatActivity {
 
     public DBSQLiteHelper db = new DBSQLiteHelper(this);
-    private List<Recipe> allRecipes;
 
     ListView listViewSearch;
     EditText search;
@@ -26,7 +25,10 @@ public class SearchRecipes extends AppCompatActivity {
     String searchtype;
     ArrayAdapter<String> adapter;
     String[] names;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7c132480f2af89dba3c53798306101b51f2537cb
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +37,6 @@ public class SearchRecipes extends AppCompatActivity {
         getSupportActionBar().hide();
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        allRecipes=db.getAllRecipes();
 
         dropdownSearch = (Spinner) findViewById(R.id.spinnerSearch);
         String[] items = new String[]{"Name","Category","Cuisine", "Ingredients"};

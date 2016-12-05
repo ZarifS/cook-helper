@@ -94,6 +94,8 @@ public class DBSQLiteHelper extends SQLiteOpenHelper{
                 recipes.add(recipe);
             } while (cursor.moveToNext());
         }
+
+        db.close();
         return recipes;
     }
 
@@ -101,6 +103,7 @@ public class DBSQLiteHelper extends SQLiteOpenHelper{
         SQLiteDatabase db = this.getWritableDatabase();
         String s = "DELETE FROM RecipesDB WHERE name = '"+r.getName()+"'";
         db.execSQL(s);
+        db.close();
     }
 
 
@@ -187,7 +190,7 @@ public class DBSQLiteHelper extends SQLiteOpenHelper{
         search =search.toLowerCase();
         String and = " AND ingredients ";
         String or= " OR ingredients ";
-        String not= " NOT LIKE ";
+        String not= " NOT ";
         String query ="SELECT * FROM RecipesDB WHERE ingredients ";
 
         String [] testSplit = search.split(" ");

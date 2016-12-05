@@ -75,8 +75,6 @@ public class BrowseRecipes extends AppCompatActivity {
             }
         });
 
-//        Recipe r = db.searchIngr();
-//        System.out.println(r.getName());
     }
 
 }

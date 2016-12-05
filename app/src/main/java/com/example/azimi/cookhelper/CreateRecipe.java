@@ -20,8 +20,6 @@ public class CreateRecipe extends AppCompatActivity {
 
 
     private LinkedList<Ingredient> listofIngredients;
-    private List<Recipe> allRecipes;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,19 +27,6 @@ public class CreateRecipe extends AppCompatActivity {
         setContentView(R.layout.activity_create_recipe);
         getSupportActionBar().hide();
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
-        allRecipes=db.getAllRecipes();
-        System.out.println("The first two test cases were messed up (Both TestRecipe). The correct test case is Pasta");
-        for(int i=0;i<allRecipes.size();i++){
-            Recipe r;
-            r=allRecipes.get(i);
-            System.out.println(r.getName());
-            System.out.println(r.getCuisine());
-            System.out.println(r.getType());
-            System.out.println(r.getIngr());
-            System.out.println(r.getInstructions());
-        }
-
 
         listofIngredients = new LinkedList<>();
 
@@ -113,7 +98,4 @@ public class CreateRecipe extends AppCompatActivity {
 
     }
 
-    public void storeRecipe(Recipe recipe){
-
-    }
 }
