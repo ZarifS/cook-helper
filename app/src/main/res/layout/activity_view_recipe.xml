@@ -239,6 +239,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/button7"
             android:layout_weight="0.71"
+            android:textColor="@color/menupurple"
             android:onClick="backBtnClick" />
 
         <Button
@@ -247,6 +248,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/button14"
             android:layout_weight="1"
+            android:textColor="@color/menupurple"
             android:onClick="deleteBtnClick" />
     </LinearLayout>
 

@@ -72,10 +72,12 @@ public class ViewRecipe extends AppCompatActivity {
 
     public void deleteBtnClick(View view) {
 
-        //db.deleteRecipe();
+
+         db.deleteRecipe(r);
 
         Intent intent = new Intent(this, BrowseRecipes.class);
         startActivity(intent);
+        finish();
 
     }
 
@@ -83,6 +85,7 @@ public class ViewRecipe extends AppCompatActivity {
 
         Intent intent = new Intent(this, BrowseRecipes.class);
         startActivity(intent);
+        finish();
 
     }
 }

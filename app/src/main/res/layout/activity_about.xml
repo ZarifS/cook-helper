@@ -96,5 +96,5 @@
         android:gravity="left"
         android:maxLines="10"
         android:lines="10"
-        android:text="Cook Helper was developed by the above project team for SEG2105. Cook Helper allows users to Add Recipes and Browse Recipes."></TextView>
+        android:text="Cook Helper was developed by the above project team for SEG2105. Cook Helper allows users to Add Recipes, Browse All Recipes, Search through recipes by specifics and Delete any recipe."></TextView>
 </RelativeLayout>

@@ -97,31 +97,98 @@ public class DBSQLiteHelper extends SQLiteOpenHelper{
         return recipes;
     }
 
-    public void deleteRecipe(int id){
+    public void deleteRecipe(Recipe r){
         SQLiteDatabase db = this.getWritableDatabase();
-        String s = "DELETE FROM RecipesDB WHERE id ="+id+"";
+        String s = "DELETE FROM RecipesDB WHERE name = '"+r.getName()+"'";
         db.execSQL(s);
     }
 
-    public Recipe searchCuisine(String search){
+
+    public List searchName(String search){
+        List recipes = new LinkedList();
         SQLiteDatabase db = this.getWritableDatabase();
-        String s = "SELECT FROM RecipesDB WHERE cuisineType =" +search;
-        return null;
+        search =search.toLowerCase();
+        String query = "SELECT * FROM RecipesDB WHERE name LIKE '%"+search+"%'";
+        Cursor cursor = db.rawQuery(query, null);
+        Recipe recipe;
+        if (cursor.moveToFirst()) {
+            do {
+                String name = cursor.getString(1);
+                String cuisine = cursor.getString(2);
+                String type = cursor.getString(3);
+                String ingr = cursor.getString(4);
+                String instructions = cursor.getString(5);
+                recipe = new Recipe(name,cuisine,type,ingr,instructions);
+                // Add recipe to recipes
+                recipes.add(recipe);
+            } while (cursor.moveToNext());
+        }
+
+        db.close();
+        return recipes;
     }
 
-    public Recipe searchType(String search){
+    public List searchCuisine(String search){
+        List recipes = new LinkedList();
         SQLiteDatabase db = this.getWritableDatabase();
-        String s = "SELECT FROM RecipesDB WHERE mealType = " +search;
-        return null;
+        search =search.toLowerCase();
+        String query = "SELECT * FROM RecipesDB WHERE cuisineType LIKE '%"+search+"%'";
+        Cursor cursor = db.rawQuery(query, null);
+        Recipe recipe;
+        if (cursor.moveToFirst()) {
+            do {
+                String name = cursor.getString(1);
+                String cuisine = cursor.getString(2);
+                String type = cursor.getString(3);
+                String ingr = cursor.getString(4);
+                String instructions = cursor.getString(5);
+                recipe = new Recipe(name,cuisine,type,ingr,instructions);
+                // Add recipe to recipes
+                recipes.add(recipe);
+            } while (cursor.moveToNext());
+        }
+
+        db.close();
+        return recipes;
     }
 
-    public  Recipe searchIngr(){
+
+    public List searchType(String search){
+        List recipes = new LinkedList();
+        SQLiteDatabase db = this.getWritableDatabase();
+        search =search.toLowerCase();
+        String query = "SELECT * FROM RecipesDB WHERE mealType LIKE '%"+search+"%'";
+        System.out.println(query);
+        Cursor cursor = db.rawQuery(query, null);
+        Recipe recipe;
+        if (cursor.moveToFirst()) {
+            do {
+                String name = cursor.getString(1);
+                String cuisine = cursor.getString(2);
+                String type = cursor.getString(3);
+                String ingr = cursor.getString(4);
+                String instructions = cursor.getString(5);
+                recipe = new Recipe(name,cuisine,type,ingr,instructions);
+                // Add recipe to recipes
+                recipes.add(recipe);
+            } while (cursor.moveToNext());
+        }
+
+        db.close();
+        return recipes;
+    }
+
+    public  List searchIngr(String search){
+
+        System.out.println(search);
+        List recipes = new LinkedList();
+
         //search tomato and avacado or pasta
-        String search = "cream";
-        search.toLowerCase();
-        String and = " AND ingredients LIKE ";
-        String or= " OR ingredients LIKE ";
-        String query ="SELECT * FROM RecipesDB WHERE ingredients LIKE ";
+        search =search.toLowerCase();
+        String and = " AND ingredients ";
+        String or= " OR ingredients ";
+        String not= " NOT LIKE ";
+        String query ="SELECT * FROM RecipesDB WHERE ingredients ";
 
         String [] testSplit = search.split(" ");
 
@@ -132,25 +199,37 @@ public class DBSQLiteHelper extends SQLiteOpenHelper{
             else if(testSplit[i].equals("or")){
                 query=query+or;
             }
+            else if(testSplit[i].equals("not")){
+                query=query+not;
+            }
             else{
                 System.out.println(testSplit[i]);
-                query = query+"'"+testSplit[i]+"%'";
+                query = query+"LIKE '%"+testSplit[i]+"%'";
             }
         }
-        System.out.println(query);
 
-        SQLiteDatabase db = this.getWritableDatabase();;
+        System.out.println(query);
+        SQLiteDatabase db = this.getWritableDatabase();
+
         Cursor cursor = db.rawQuery(query, null);
-        Recipe recipe =null;
+        Recipe recipe;
+
         if (cursor.moveToFirst()) {
-            String name = cursor.getString(1);
-            String cuisine = cursor.getString(2);
-            String type = cursor.getString(3);
-            String ingr = cursor.getString(4);
-            String instructions = cursor.getString(5);
-            recipe = new Recipe(name, cuisine, type, ingr, instructions);
+            do {
+                String name = cursor.getString(1);
+                String cuisine = cursor.getString(2);
+                String type = cursor.getString(3);
+                String ingr = cursor.getString(4);
+                String instructions = cursor.getString(5);
+                recipe = new Recipe(name,cuisine,type,ingr,instructions);
+                // Add recipe to recipes
+                recipes.add(recipe);
+            } while (cursor.moveToNext());
         }
-        return recipe;
+
+        db.close();
+        return recipes;
+
     }
 
 
