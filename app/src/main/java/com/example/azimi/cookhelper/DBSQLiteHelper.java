@@ -103,38 +103,6 @@ public class DBSQLiteHelper extends SQLiteOpenHelper{
         db.execSQL(s);
     }
 
-    public void searchIngr(String search){
-        //search tomato and avacado or pasta
-        search.toLowerCase();
-        String and = " AND ingredients LIKE %";
-        String or= " OR ingredients LIKE %";
-        String query ="SELECT FROM " +TABLE_NAME +" WHERE "+KEY_INGREDIENTS+" LIKE";
-
-        SQLiteDatabase db = this.getWritableDatabase();
-        String [] testSplit = search.split(" ");
-        for(int i=0;i<testSplit.length;i++){
-            if(testSplit[i].equals("and")){
-                query=query+and;
-            }
-            if(testSplit[i].equals("or")){
-                query=query+or;
-            }
-            else{
-                query=query+ " "+testSplit[i];
-            }
-
-        }
-
-
-        System.out.println("PRINTING TEST STRING IN COMPLETE...");
-        System.out.println(search);
-
-        System.out.println("PRINTING TEST STRING ARRAY AFTER SPLIT...");
-        for(int i=0; i <testSplit.length; i++){
-            System.out.println(testSplit[i]);
-        }
-    }
-
     public Recipe searchCuisine(String search){
         SQLiteDatabase db = this.getWritableDatabase();
         String s = "SELECT FROM RecipesDB WHERE cuisineType =" +search;
@@ -145,6 +113,44 @@ public class DBSQLiteHelper extends SQLiteOpenHelper{
         SQLiteDatabase db = this.getWritableDatabase();
         String s = "SELECT FROM RecipesDB WHERE mealType = " +search;
         return null;
+    }
+
+    public  Recipe searchIngr(){
+        //search tomato and avacado or pasta
+        String search = "cream";
+        search.toLowerCase();
+        String and = " AND ingredients LIKE ";
+        String or= " OR ingredients LIKE ";
+        String query ="SELECT * FROM RecipesDB WHERE ingredients LIKE ";
+
+        String [] testSplit = search.split(" ");
+
+        for(int i=0;i<testSplit.length;i++){
+            if(testSplit[i].equals("and")){
+                query=query+and;
+            }
+            else if(testSplit[i].equals("or")){
+                query=query+or;
+            }
+            else{
+                System.out.println(testSplit[i]);
+                query = query+"'"+testSplit[i]+"%'";
+            }
+        }
+        System.out.println(query);
+
+        SQLiteDatabase db = this.getWritableDatabase();;
+        Cursor cursor = db.rawQuery(query, null);
+        Recipe recipe =null;
+        if (cursor.moveToFirst()) {
+            String name = cursor.getString(1);
+            String cuisine = cursor.getString(2);
+            String type = cursor.getString(3);
+            String ingr = cursor.getString(4);
+            String instructions = cursor.getString(5);
+            recipe = new Recipe(name, cuisine, type, ingr, instructions);
+        }
+        return recipe;
     }
 
 

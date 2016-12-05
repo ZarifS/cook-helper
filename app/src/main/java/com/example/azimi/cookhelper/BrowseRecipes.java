@@ -37,7 +37,6 @@ public class BrowseRecipes extends AppCompatActivity {
             Recipe r;
             r=allRecipes.get(i);
             names[i] = r.getName();
-            System.out.println(names[i]);
         }
 
         listView = (ListView) findViewById(R.id.listView1);
@@ -74,7 +73,8 @@ public class BrowseRecipes extends AppCompatActivity {
             }
         });
 
-
+//        Recipe r = db.searchIngr();
+//        System.out.println(r.getName());
     }
 
 }
