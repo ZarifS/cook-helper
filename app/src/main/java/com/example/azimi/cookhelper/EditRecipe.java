@@ -86,8 +86,8 @@ public class EditRecipe extends AppCompatActivity {
         recipename.setText("");
         instructions.setText("");
 
-        db.editRecipe(oldRecipe, newRecipe);
-        System.out.println("after db");
+//        db.editRecipe(oldRecipe, newRecipe);
+//        System.out.println("after db");
 
 //        Intent i= new Intent(EditRecipe.this, MainActivity.class);
 //        startActivity(i);
